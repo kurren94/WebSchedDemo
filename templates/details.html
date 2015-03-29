@@ -5,13 +5,13 @@
 {{ post.score }}: {{ post.text }}
 
 <form method="POST">
-    <input type="submit" value="upvote" />
+    <input type="submit" value="upvote" {% if already_voted %}disabled{% endif %} />
     <input type="hidden" name="action" value="upvote">
 </form>
 
 <form method="POST">
-    <input type="submit" value="downvote" />
-    <input type="hidden" name="action" value="downvote">
+    <input type="submit" value="downvote" {% if already_voted %}disabled{% endif %}/>
+    <input type="hidden" name="action" value="downvote" />
 </form>
 
 {% endblock %}

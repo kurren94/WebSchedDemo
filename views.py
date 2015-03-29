@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, session
 from app import app
 from schedule_api import *
 
@@ -23,9 +23,12 @@ def details(id):
     options = { 'post': posts[int(id)] }
 
     if request.method == 'POST':
+        session[id] = True
+
         if request.form['action'] == 'upvote':
             posts[int(id)].score += 1
         else:
             posts[int(id)].score -= 1
 
+    options['already_voted'] = id in session
     return render_template('details.html', **options)
