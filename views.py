@@ -14,3 +14,9 @@ def index():
     options = { 'posts': posts }
 
     return render_template('index.html', **options)
+
+@app.route('/posting/<id>')
+def details(id):
+    options = { 'post': posts[int(id)] }
+
+    return render_template('details.html', **options)
