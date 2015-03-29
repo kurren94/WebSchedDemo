@@ -3,7 +3,7 @@
 {% block content %}
 
 {% for post in posts %}
-    {{ post.score }}: {{ post.text }}<br>
+    <a href="/posting/{{ loop.index - 1 }}"> {{ post.score }}: {{ post.text }}</a> <br>
 {% endfor %}
 
 {% endblock %}
