@@ -7,11 +7,14 @@ class Posting:
         self.text = text
         self.score = 0
 
-posts = [ Posting('test post 1'), Posting('test post 2') ]
+posts = []
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     options = { 'posts': posts }
+
+    if request.method == 'POST':
+        posts.append(Posting(request.form['text']))
 
     return render_template('index.html', **options)
 

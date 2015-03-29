@@ -6,4 +6,9 @@
     <a href="/posting/{{ loop.index - 1 }}"> {{ post.score }}: {{ post.text }}</a> <br>
 {% endfor %}
 
+<form method="POST">
+    <input type="text" name="text" >
+    <input type="submit" value="submit" />
+</form>
+
 {% endblock %}
