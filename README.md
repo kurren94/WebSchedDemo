@@ -1,4 +1,1 @@
-Schedule Planning Website
-=========================
-
-See the [Getting Started](https://github.com/eecs183/WebScheduler/wiki/Getting-Started) guide for more information.
+[website](https://powerful-harbor-1701.herokuapp.com/)
